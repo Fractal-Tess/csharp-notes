@@ -1,0 +1,442 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[C-Sharp]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.png</url><title>C-Sharp</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 04 Nov 2024 16:38:34 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 04 Nov 2024 16:38:33 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Access Modifiers]]></title><description><![CDATA[ 
+ <br><br>Access modifiers are <a data-tooltip-position="top" aria-label="Keywords" data-href="Keywords" href="Concepts/Keywords.html" class="internal-link" target="_self" rel="noopener nofollow">keywords</a> that are used to specify the accessibility of <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a> <a data-tooltip-position="top" aria-label="State" data-href="State" href="Concepts/State.html" class="internal-link" target="_self" rel="noopener nofollow">state</a>,<a data-tooltip-position="top" aria-label="Behaviour" data-href="Behaviour" href="Concepts/Behaviour.html" class="internal-link" target="_self" rel="noopener nofollow">behaviour</a>, and static fields.<br>There are five access modifiers in C#:<br>
+<br>public: A type or type member with the public access modifier can be accessed from anywhere in the program.
+<br>private: A type or type member with the private access modifier can only be accessed within the same class or struct.<br>
+FOCUS ON FIRST 2 - IGNORE THE REST 3 FOR NOW
+<br>protected: A type or type member with the protected access modifier can be accessed within the same class or struct, as well as within any derived class or struct.    
+<br>internal: A type or type member with the internal access modifier can be accessed from anywhere within the same assembly, but not from other assemblies.
+<br>protected internal: A type or type member with the protected internal access modifier can be accessed within the same assembly, as well as within any derived class or struct, regardless of whether the derived class or struct is in the same assembly or a different assembly.
+<br><br>class User
+{
+	string var1;
+	private string var2;
+	public string var3;
+
+	public void ExampleMethod()
+	{
+		// Here in this scope/block/context,
+		// we can access all of the declared member variables
+		// regardless if they are private or public	
+	}
+}
+
+
+User user = new User();
+
+user.var1; // Errors, because var1 is `implicitly` private by default
+user.var2; // Errors, because var2 is `explicitly` private
+user.var3; // Works, because var3 is `explicitly` marked public
+Copy]]></description><link>Classes/Access Modifiers.html</link><guid isPermaLink="false">Classes/Access Modifiers.md</guid><pubDate>Fri, 05 May 2023 11:26:24 GMT</pubDate></item><item><title><![CDATA[Class]]></title><description><![CDATA[ 
+ <br><br>In C#, a class is a blueprint or template for creating objects that share a common set functionality - stuff like <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>, <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>, <a data-tooltip-position="top" aria-label="Events" data-href="Events" href="Classes/Events.html" class="internal-link" target="_self" rel="noopener nofollow">events</a>, and <a data-tooltip-position="top" aria-label="Constructor" data-href="Constructor" href="Classes/Constructor.html" class="internal-link" target="_self" rel="noopener nofollow">constructor</a>. A class <a data-tooltip-position="top" aria-label="Encapsulation" data-href="Encapsulation" href="Concepts/Encapsulation.html" class="internal-link" target="_self" rel="noopener nofollow">encapsulates</a> data and behavior into a single unit, making it easier to manage and reuse code.<br>Inside the class, you can define fields, <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>, <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a> and <a data-tooltip-position="top" aria-label="Events" data-href="Events" href="Classes/Events.html" class="internal-link" target="_self" rel="noopener nofollow">events</a> - which are also known as <a data-tooltip-position="top" aria-label="Member Variables" data-href="Member Variables" href="Classes/Member Variables.html" class="internal-link" target="_self" rel="noopener nofollow">member variables</a>. These <a data-tooltip-position="top" aria-label="Member Variables" data-href="Member Variables" href="Classes/Member Variables.html" class="internal-link" target="_self" rel="noopener nofollow">member variables</a>  represent the data and <a data-tooltip-position="top" aria-label="Behaviour" data-href="Behaviour" href="Concepts/Behaviour.html" class="internal-link" target="_self" rel="noopener nofollow">behaviour</a> of the <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">objects</a> that will be created from the class. <br><br>Here is an example of a User class.<br>class User {}
+Copy<br>Once you have declared the class, you can create <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">objects</a> (also called instances) of that class using the new <a data-tooltip-position="top" aria-label="Keywords" data-href="Keywords" href="Concepts/Keywords.html" class="internal-link" target="_self" rel="noopener nofollow">keyword</a>, like this:<br>User user = new User();
+Copy<br>This creates a new <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a> of the Person class and assigns it to the <a data-tooltip-position="top" aria-label="Variable" data-href="Variable" href="Concepts/Variable.html" class="internal-link" target="_self" rel="noopener nofollow">variable</a> user. ]]></description><link>Classes/Class.html</link><guid isPermaLink="false">Classes/Class.md</guid><pubDate>Fri, 05 May 2023 11:26:55 GMT</pubDate></item><item><title><![CDATA[Constructor]]></title><description><![CDATA[ 
+ <br><br>A constructor is a special <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">method</a> that is called when an <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">boejct</a>  of a <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a> is created. It is used to initialize the <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object's</a> <a data-tooltip-position="top" aria-label="State" data-href="State" href="Concepts/State.html" class="internal-link" target="_self" rel="noopener nofollow">statre</a> and set its initial values on <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>.<br>The syntax for defining a constructor in C# is similar to that of a method, but with a few key differences:<br><br>Class and constructor declaration:<br>public class User
+{
+    // Constructor
+    public User()
+    {
+        // Initialization code here
+    }
+}
+Copy<br>In this example, User is a class that has a constructor defined. The constructor has the same name as the <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a> and is marked with the public <a data-tooltip-position="top" aria-label="Access Modifiers" data-href="Access Modifiers" href="Classes/Access Modifiers.html" class="internal-link" target="_self" rel="noopener nofollow">accessbility modifier</a>, indicating that it can be called from anywhere. The body of the constructor contains initialization code that will be executed whenever an <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a> of the <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a> is created.<br>Constructors can have <a data-tooltip-position="top" aria-label="Parameters" data-href="Parameters" href="Concepts/Parameters.html" class="internal-link" target="_self" rel="noopener nofollow">parameters</a>, allowing you to pass <a data-tooltip-position="top" aria-label="Arguments" data-href="Arguments" href="Concepts/Arguments.html" class="internal-link" target="_self" rel="noopener nofollow">arguments</a>  to the constructor when creating an <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a>. Here's an example of a constructor that takes two parameters:<br>public class User
+{
+    private string name;
+    private int age;
+
+    // Constructor with parameters
+    public User(string name, int age)
+    {
+        this.name = name;
+        this.age = age;
+    }
+}
+Copy<br>In this example, User is a <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a> that has a constructor with two <a data-tooltip-position="top" aria-label="Parameters" data-href="Parameters" href="Concepts/Parameters.html" class="internal-link" target="_self" rel="noopener nofollow">parameters</a>: <br>
+<br>name
+<br>age
+<br>When an <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a> of the User class is created with the new <a data-tooltip-position="top" aria-label="Keywords" data-href="Keywords" href="Concepts/Keywords.html" class="internal-link" target="_self" rel="noopener nofollow">keyword</a>, the constructor is called/invoked. <br><br>The goal of the constructor is to set the <a data-tooltip-position="top" aria-label="Definition And Declaration > Declaration" data-href="Definition And Declaration#Declaration" href="Concepts/Definition And Declaration.html#Declaration" class="internal-link" target="_self" rel="noopener nofollow">declared</a> class <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>.<br>In summary, a constructor in C# is a special method that is used to initialize the <a data-tooltip-position="top" aria-label="State" data-href="State" href="Concepts/State.html" class="internal-link" target="_self" rel="noopener nofollow">state</a> of an <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a> when it is created. It has the same name as the <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a> and can have <a data-tooltip-position="top" aria-label="Parameters" data-href="Parameters" href="Concepts/Parameters.html" class="internal-link" target="_self" rel="noopener nofollow">parameters</a> to accept an arbitrary amount of <a data-tooltip-position="top" aria-label="Arguments" data-href="Arguments" href="Concepts/Arguments.html" class="internal-link" target="_self" rel="noopener nofollow">arguments</a>.]]></description><link>Classes/Constructor.html</link><guid isPermaLink="false">Classes/Constructor.md</guid><pubDate>Fri, 05 May 2023 11:27:08 GMT</pubDate></item><item><title><![CDATA[What are events?]]></title><description><![CDATA[ 
+ <br><br>TODO]]></description><link>Classes/Events.html</link><guid isPermaLink="false">Classes/Events.md</guid><pubDate>Fri, 05 May 2023 10:20:10 GMT</pubDate></item><item><title><![CDATA[Member Variables]]></title><description><![CDATA[ 
+ <br><br>Member variables refer to the variables that are defined as part of a class or struct and hold data that is specific to an instance of that class or struct. Member variables are also known as instance variables or fields.<br><br>public class Example
+{
+	static int count = 0;
+
+	public string name;
+
+	public string GetName()
+	{
+		return this.name;
+	}
+}
+Copy<br>In this example, only the <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">property</a> name and the <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">method</a> GetName are member variables of the <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a> Example.<br>While on the other hand the count <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">property</a> is  NOT a meber variable because it is marked as <a data-tooltip-position="top" aria-label="Static" data-href="Static" href="Classes/Static.html" class="internal-link" target="_self" rel="noopener nofollow">static</a>.]]></description><link>Classes/Member Variables.html</link><guid isPermaLink="false">Classes/Member Variables.md</guid><pubDate>Fri, 05 May 2023 11:27:17 GMT</pubDate></item><item><title><![CDATA[What are methods?]]></title><description><![CDATA[ 
+ <br><br>Method is a block of code that performs a specific task or set of tasks. A method can be called from other parts of a program to perform the tasks that it was designed for.<br><br>class User
+	public void PrintName()
+	{
+		System.Console.WriteLine("My name is Vilian");
+	}
+}
+Copy<br>In this example, PrintName is a method that prints to the console the string  My name is Vilian.<br><br>Methods are always declared in the following way:<br>
+&lt;<a data-tooltip-position="top" aria-label="Access Modifiers" data-href="Access Modifiers" href="Classes/Access Modifiers.html" class="internal-link" target="_self" rel="noopener nofollow">accessability modifier</a>&gt; &lt;<a data-tooltip-position="top" aria-label="Type" data-href="Type" href="Concepts/Type.html" class="internal-link" target="_self" rel="noopener nofollow">return type</a>&gt; &lt;\method name&gt;&lt;<a data-tooltip-position="top" aria-label="Parameters" data-href="Parameters" href="Concepts/Parameters.html" class="internal-link" target="_self" rel="noopener nofollow">parameters</a>&gt; <br>Example:<br>class Math
+	//1    2    3       4    
+	public int Add(int a, int b)
+	{
+		int sum = a + b;
+		return sum;
+	}
+}
+Copy<br>1 - The <a data-tooltip-position="top" aria-label="Access Modifiers" data-href="Access Modifiers" href="Classes/Access Modifiers.html" class="internal-link" target="_self" rel="noopener nofollow">accessability modifier</a> of the method<br>
+2 - The return <a data-tooltip-position="top" aria-label="Type" data-href="Type" href="Concepts/Type.html" class="internal-link" target="_self" rel="noopener nofollow">type</a> of the method<br>
+3 - The name of the method - could be anything you desire<br>
+4 - The <a data-tooltip-position="top" aria-label="Parameters" data-href="Parameters" href="Concepts/Parameters.html" class="internal-link" target="_self" rel="noopener nofollow">parameters</a>. ]]></description><link>Classes/Methods.html</link><guid isPermaLink="false">Classes/Methods.md</guid><pubDate>Mon, 04 Nov 2024 16:25:52 GMT</pubDate></item><item><title><![CDATA[Object]]></title><description><![CDATA[ 
+ <br><br>In C#, an object is an instance of a class that contains data and the code to manipulate that data. Every object has a <a data-tooltip-position="top" aria-label="Type" data-href="Type" href="Concepts/Type.html" class="internal-link" target="_self" rel="noopener nofollow">type</a>, which is defined by its <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a>, and can be manipulated through its properties, methods, and events.<br>
+<a data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">Object</a><br><br>When you create a new object in C#, you use the new <a data-tooltip-position="top" aria-label="Keywords" data-href="Keywords" href="Concepts/Keywords.html" class="internal-link" target="_self" rel="noopener nofollow">keyword</a> followed by the name of the class, like this:<br>User user = new User();
+Copy<br>This creates a new object of <a data-tooltip-position="top" aria-label="Type" data-href="Type" href="Concepts/Type.html" class="internal-link" target="_self" rel="noopener nofollow">type</a> User and assigns it to the <a data-tooltip-position="top" aria-label="Variable" data-href="Variable" href="Concepts/Variable.html" class="internal-link" target="_self" rel="noopener nofollow">variable</a> user.<br>Once you have created the object, you can access its <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>  and <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a> using the dot notation, like this:<br>user.name;
+Copy]]></description><link>Classes/Object.html</link><guid isPermaLink="false">Classes/Object.md</guid><pubDate>Fri, 05 May 2023 11:27:54 GMT</pubDate></item><item><title><![CDATA[Properties]]></title><description><![CDATA[ 
+ <br><br>Class property is a the set of <a data-tooltip-position="top" aria-label="Member Variables" data-href="Member Variables" href="Classes/Member Variables.html" class="internal-link" target="_self" rel="noopener nofollow">member variables</a> and static fields of a class that <a data-tooltip-position="top" aria-label="Encapsulation" data-href="Encapsulation" href="Concepts/Encapsulation.html" class="internal-link" target="_self" rel="noopener nofollow">encpsulates</a> a value or a calculated result. Class properties provide a way to access and manipulate data within a class instance and are used to define the characteristics of the object.<br><br>A class property consists of a getter and/or a setter <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">method</a>, which provide access to the property value. The getter method returns the value of the property, while the setter method sets the value of the property. In C#, <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a> properties are <a data-tooltip-position="top" aria-label="Definition And Declaration > Definition" data-href="Definition And Declaration#Definition" href="Concepts/Definition And Declaration.html#Definition" class="internal-link" target="_self" rel="noopener nofollow">defined</a> using the get and set <a data-tooltip-position="top" aria-label="Keywords" data-href="Keywords" href="Concepts/Keywords.html" class="internal-link" target="_self" rel="noopener nofollow">keywords</a>, like this:<br>public class User {
+    private string name;
+
+    public string Name {
+        get {
+            return this.name;
+        }
+        set {
+            this.name = value;
+        }
+    }
+}
+Copy<br>The code above, and the code below, are IDENTICAL:<br>public class User {
+    public string Name;
+}
+Copy]]></description><link>Classes/Properties.html</link><guid isPermaLink="false">Classes/Properties.md</guid><pubDate>Fri, 05 May 2023 11:09:55 GMT</pubDate></item><item><title><![CDATA[Static]]></title><description><![CDATA[ 
+ <br><br>In C#, the static <a data-tooltip-position="top" aria-label="Keywords" data-href="Keywords" href="Concepts/Keywords.html" class="internal-link" target="_self" rel="noopener nofollow">keyword</a> is used to <a data-tooltip-position="top" aria-label="Definition And Declaration > Declaration" data-href="Definition And Declaration#Declaration" href="Concepts/Definition And Declaration.html#Declaration" class="internal-link" target="_self" rel="noopener nofollow">declare</a> a member of a class that belongs to the class itself, rather than to <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">objects</a> of the class. This means that you can access static members without creating an <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a> of the class.<br><br>public class MyClass
+{
+    public static int MyStaticField = 5;
+    
+    public static void MyStaticMethod()
+    {
+        Console.WriteLine("This is a static method.");
+    }
+}
+Copy<br>In this example, MyStaticField and MyStaticMethod are both <a data-tooltip-position="top" aria-label="Definition And Declaration > Declaration" data-href="Definition And Declaration#Declaration" href="Concepts/Definition And Declaration.html#Declaration" class="internal-link" target="_self" rel="noopener nofollow">decalred</a> as static members of the MyClass <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a>. This means that you can access them directly on the class, without creating an <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a> of the class:<br>int x = MyClass.MyStaticField;
+MyClass.MyStaticMethod();
+Copy<br>In this example, x is assigned the value of MyStaticField, which is 5. The MyStaticMethod is called directly on the class, and its message is printed to the console.<br>static members are often used for utility classes, where you don't need to create an instance of the class to use its functionality. They can also be used to define shared resources or configuration settings that are used across all instances of a class.]]></description><link>Classes/Static.html</link><guid isPermaLink="false">Classes/Static.md</guid><pubDate>Fri, 05 May 2023 11:28:08 GMT</pubDate></item><item><title><![CDATA[Arguments]]></title><description><![CDATA[ 
+ <br><br>Arguments are the values that are passed to a <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">method</a> or a <a data-tooltip-position="top" aria-label="Constructor" data-href="Constructor" href="Classes/Constructor.html" class="internal-link" target="_self" rel="noopener nofollow">constructor</a> when they are called. They are mainly used to provide information to the called <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">method</a> or <a data-tooltip-position="top" aria-label="Constructor" data-href="Constructor" href="Classes/Constructor.html" class="internal-link" target="_self" rel="noopener nofollow">constructor</a>.<br><br>System.Console.WriteLine("Hello");
+Copy<br>Here, the string hello is an argument.<br>int b = 5;
+System.Console.WriteLine(b);
+Copy<br>Here, the <a data-tooltip-position="top" aria-label="Variable" data-href="Variable" href="Concepts/Variable.html" class="internal-link" target="_self" rel="noopener nofollow">variable</a> b is an argument.<br>User user = new User()
+System.Console.WriteLine(user);
+Copy<br>Here, the <a data-tooltip-position="top" aria-label="Variable" data-href="Variable" href="Concepts/Variable.html" class="internal-link" target="_self" rel="noopener nofollow">variable</a> user is an argument.]]></description><link>Concepts/Arguments.html</link><guid isPermaLink="false">Concepts/Arguments.md</guid><pubDate>Fri, 05 May 2023 11:24:08 GMT</pubDate></item><item><title><![CDATA[Behaviour]]></title><description><![CDATA[ 
+ <br><br>Behavior typically refers to the actions or operations that an <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a> can perform.<br>Behavior is typically implemented through <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>, which are functions that are defined within a <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a> and are used to perform some operation on the <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a> or its data.<br><br>A BankAccount <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a> might have <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>  such as Deposit, Withdraw, and GetBalance, which define the behavior of a bank account <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a>.<br>Here's an example of a simple class with some behavior:<br>
+public class UserBankAccount
+{
+
+	private int balance;
+	private bool isBlacklisted:
+
+	public BankAccount(int balance, bool isBlacklisted)
+	{
+		this.balance=balance;
+		this.isBlacklisted = isBlacklisted;
+	}
+  
+
+	public void GetBalance()
+	{
+		if(this.isBlacklisted)
+		{
+			System.Console.WriteLine("You are Blacklisted.");
+		}
+		else
+		{
+			System.Console.WriteLine("Your balance is {0}$",this.balance);	
+		}
+	}
+
+	 public void AddFunds(int amount)
+	 {
+		if(this.isBlacklisted)
+		{
+			System.Console.WriteLine("You are Blacklisted");
+		}
+		else
+		{
+			this.balance +=amount;
+			System.Console.WriteLine("Your new balance is {0}$",this.balance);	
+		}
+	 } 
+}
+Copy<br>In this example, the UserBankAccount  <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a> has 2 <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a> and 2 <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br><a data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">Methods</a> - GetBalance and AddFunds
+<br><a data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">Properties</a> - balance and isBlacklisted
+<br>These <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a> define the behavior of the UserBankAccount object and determine what operations can be performed on it. By calling these methods, you can interact with the  internal private <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>/<a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>/<a data-tooltip-position="top" aria-label="Events" data-href="Events" href="Classes/Events.html" class="internal-link" target="_self" rel="noopener nofollow">events</a> of the  <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a> and modify its state or perform some action based on the object's state.]]></description><link>Concepts/Behaviour.html</link><guid isPermaLink="false">Concepts/Behaviour.md</guid><pubDate>Fri, 05 May 2023 11:28:51 GMT</pubDate></item><item><title><![CDATA[Definition And Declaration]]></title><description><![CDATA[ 
+ <br><br>Variable declaration refers to the process of specifying the <a data-tooltip-position="top" aria-label="Type" data-href="Type" href="Concepts/Type.html" class="internal-link" target="_self" rel="noopener nofollow">data type</a> and name of a variable without assigning a value to it. It tells the compiler that the variable exists and can be used in the code. A variable can be declared using the following syntax:<br>int age;
+Copy<br>In this example, we are declaring a new variable with the name of age.<br><br>Variable definition refers to the process of specifying the <a data-tooltip-position="top" aria-label="Type" data-href="Type" href="Concepts/Type.html" class="internal-link" target="_self" rel="noopener nofollow">data type</a>, name, and initial value of a variable. A variable can be defined using the following syntax:<br>int age = 22;
+Copy<br><br><br>All variables that are referenced in code must be declared before they can be used. This means that you need to declare a variable before you can assign a value to it or read its value.<br>For example:<br>
+works<br>int age;
+System.Console.WriteLine(age);
+Copy<br>doesn't work<br>System.Console.WriteLine(age); // Errors - age is not declared
+int age;
+Copy<br><br>C# is a statically-typed language, which means that once a variable is defined with a specific <a data-tooltip-position="top" aria-label="Type" data-href="Type" href="Concepts/Type.html" class="internal-link" target="_self" rel="noopener nofollow">data type</a>, its data type cannot be changed during <a data-tooltip-position="top" aria-label="Runtime" data-href="Runtime" href="Concepts/Runtime.html" class="internal-link" target="_self" rel="noopener nofollow">runtime</a>.<br>For example:<br>
+doesn't work<br>int age;
+string age;
+Copy<br>^^ This is wrong!!! You CANNOT do this.<br><br>In C#, you CANNOT redeclare variables.<br>For example:<br>
+doesn't work<br>int age;
+int age
+Copy<br>^^ This is wrong!!!! A variable with the same name CANNOT be redeclared.]]></description><link>Concepts/Definition And Declaration.html</link><guid isPermaLink="false">Concepts/Definition And Declaration.md</guid><pubDate>Fri, 05 May 2023 10:06:49 GMT</pubDate></item><item><title><![CDATA[Encapsulation]]></title><description><![CDATA[ 
+ <br><br>Encapsulation is one of the fundamental concepts of object-oriented programming (OOP). It refers to the practice of combining data and <a data-tooltip-position="top" aria-label="Behaviour" data-href="Behaviour" href="Concepts/Behaviour.html" class="internal-link" target="_self" rel="noopener nofollow">behavior</a>  into a single unit called a <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a> and hiding the internal details of the class from the outside world.<br>In C#, encapsulation is achieved through the use of <a data-tooltip-position="top" aria-label="Access Modifiers" data-href="Access Modifiers" href="Classes/Access Modifiers.html" class="internal-link" target="_self" rel="noopener nofollow">access modifiers</a>. These access modifiers control the visibility and accessibility of class <a data-tooltip-position="top" aria-label="Member Variables" data-href="Member Variables" href="Classes/Member Variables.html" class="internal-link" target="_self" rel="noopener nofollow">member variables</a> and <a data-tooltip-position="top" aria-label="Static" data-href="Static" href="Classes/Static.html" class="internal-link" target="_self" rel="noopener nofollow">static</a> fields from outside the <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a>.<br>Encapsulation is important because it helps to promote data integrity and reduces the likelihood of unwanted or unintended changes to the <a data-tooltip-position="top" aria-label="State" data-href="State" href="Concepts/State.html" class="internal-link" target="_self" rel="noopener nofollow">state</a> of an <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a>. By hiding the internal details of a <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a>, we can ensure that the data is accessed and modified only through well-defined interfaces that are designed to maintain the integrity of the data.]]></description><link>Concepts/Encapsulation.html</link><guid isPermaLink="false">Concepts/Encapsulation.md</guid><pubDate>Fri, 05 May 2023 11:29:20 GMT</pubDate></item><item><title><![CDATA[Keywords]]></title><description><![CDATA[ 
+ <br><br>Keywords are reserved words that have special meanings and cannot be used as identifiers (such as variable names, class names, method names, etc.).<br><br>Here is a list of C# keywords:<br>abstract     as          base        bool        break
+byte         case        catch       char        checked
+class        const       continue    decimal     default
+delegate     do          double      else        enum
+event        explicit    extern      false       finally
+fixed        float       for         foreach     goto
+if           implicit    in          int         interface
+internal     is          lock        long        namespace
+new          null        object      operator    out
+override     params      private     protected   public
+readonly     ref         return      sbyte       sealed
+short        sizeof      stackalloc  static      string
+struct       switch      this        throw       true
+try          typeof      uint        ulong       unchecked
+unsafe       ushort      using       virtual     void
+volatile     while
+Copy]]></description><link>Concepts/Keywords.html</link><guid isPermaLink="false">Concepts/Keywords.md</guid><pubDate>Fri, 05 May 2023 11:26:12 GMT</pubDate></item><item><title><![CDATA[Parameters]]></title><description><![CDATA[ 
+ <br><br>A parameter is a value that is passed to a <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">method</a> or <a data-tooltip-position="top" aria-label="Constructor" data-href="Constructor" href="Classes/Constructor.html" class="internal-link" target="_self" rel="noopener nofollow">constructor</a> when it is called. Parameters allow <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a> and <a data-tooltip-position="top" aria-label="Constructor" data-href="Constructor" href="Classes/Constructor.html" class="internal-link" target="_self" rel="noopener nofollow">constructors</a> to be more flexible and reusable by allowing them to accept different values each time they are called.<br><br>public int Add(int a, int b)
+{
+    return a + b;
+}
+Copy<br>In this example, the Add <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">method</a> takes two integer parameters a and b. When the <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">method</a> is called, the values of a and b are passed as <a data-tooltip-position="top" aria-label="Arguments" data-href="Arguments" href="Concepts/Arguments.html" class="internal-link" target="_self" rel="noopener nofollow">arguments</a> to the method. The <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">method</a> then uses these values to perform the addition operation and returns the result.]]></description><link>Concepts/Parameters.html</link><guid isPermaLink="false">Concepts/Parameters.md</guid><pubDate>Fri, 05 May 2023 11:20:00 GMT</pubDate></item><item><title><![CDATA[Runtime]]></title><description><![CDATA[ 
+ <br>The C# runtime, also known as the Common Language Runtime (CLR), is a core component of the .NET framework that provides a managed execution environment for C# code.<br>The CLR is responsible for managing the execution of C# programs, including memory management, type safety, security, and performance optimizations. When a C# program is compiled, it is transformed into an intermediate language called Common Intermediate Language (CIL), which is then executed by the CLR at runtime.<br>The CLR provides a number of important features for C# developers, including:<br>
+<br>Garbage collection: The CLR automatically manages the memory used by C# programs, freeing up memory that is no longer needed.
+<br>Just-in-time (JIT) compilation: The CLR compiles CIL into machine code just before it is executed, optimizing the performance of the code.
+<br>Exception handling: The CLR provides a robust exception handling system that allows C# programs to gracefully handle runtime errors.
+<br>Security: The CLR enforces a number of security features to ensure that C# programs are executed safely and securely.
+<br>Interoperability: The CLR allows C# code to interact with code written in other .NET languages, as well as with unmanaged code.
+<br>In summary, the C# runtime (CLR) is a key component of the .NET framework that provides a managed execution environment for C# programs, handling many important tasks such as memory management, performance optimization, and security.]]></description><link>Concepts/Runtime.html</link><guid isPermaLink="false">Concepts/Runtime.md</guid><pubDate>Fri, 05 May 2023 08:48:41 GMT</pubDate></item><item><title><![CDATA[State]]></title><description><![CDATA[ 
+ <br><br>State typically refers to the values of the data stored in an  <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a> at any given point in time. The state of an <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a> is determined by the values of its <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>.<br><br>For example, consider a Person class that has properties for Name, Age, and Address. The state of a the Person object would be determined by the values of these properties at any given time.<br>Here's an example of a simple Person class:<br>public class Person {
+    public string name; 
+    public int age;
+    public string Address;
+}
+Copy<br>Here the Person <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">class</a> has three <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>: <br>
+<br>Name
+<br>Age
+<br>Address
+<br>The state of a Person  <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a>  would be determined by the values of these  <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>.<br>By modifying the values of the <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a> of a Person  <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a>, you can change its state. <br>For example:<br>Person john = new Person();
+john.Name = "John Doe";
+john.Age = 30;
+john.Address = "123 Main St";
+// John's state is now: Name="John Doe", Age=30, Address="123 Main St"
+Copy]]></description><link>Concepts/State.html</link><guid isPermaLink="false">Concepts/State.md</guid><pubDate>Fri, 05 May 2023 08:20:30 GMT</pubDate></item><item><title><![CDATA[Type]]></title><description><![CDATA[ 
+ <br><br>In computer science, a type is a classification of some data based on the type of value it can hold and the operations that can be performed with and on it. <br>Common data types in programming languages include:<br>
+<br>Integer: used to store whole numbers (e.g., 1, 2, 3)
+<br>Floating-point: used to store decimal numbers (e.g., 1.5, 2.0, 3.14159)
+<br>Boolean: used to store true/false values
+<br>Character: used to store a single character (e.g., 'a', 'b', 'c')
+<br>String: used to store a sequence of characters (e.g., "hello", "world")
+<br>The aforementioned 5 data types are usually but not always refered to as primitive data types.<br>In addition to these basic data types, many programming languages provide other data types, such as arrays, structures, and classes, which allow for more complex data to be stored and manipulated.<br><br>Here is an example of a few custom data types<br>class User {}
+
+int[] myIntArr = { 1, 2, 3 };
+
+User user = new User();
+
+User[] user = { new User()};
+Copy<br>Firstly we define a custom data type that is named User.<br>
+Next we declare and initialize myIntArr which is of type integer array<br>
+After that we declare and initialize a new user <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">object</a> of type User<br>
+And lastly we declare and initialize a new array of type User and set the first index to a new User.]]></description><link>Concepts/Type.html</link><guid isPermaLink="false">Concepts/Type.md</guid><pubDate>Fri, 05 May 2023 11:29:53 GMT</pubDate></item><item><title><![CDATA[Variable]]></title><description><![CDATA[ 
+ <br><br>A variable is a named location in memory that stores a value of a particular <a data-tooltip-position="top" aria-label="Type" data-href="Type" href="Concepts/Type.html" class="internal-link" target="_self" rel="noopener nofollow">data type</a>. Variables are used to store data that can be used and manipulated by a program.<br><br>Here's an example of <a data-tooltip-position="top" aria-label="Definition And Declaration > Definition" data-href="Definition And Declaration#Definition" href="Concepts/Definition And Declaration.html#Definition" class="internal-link" target="_self" rel="noopener nofollow">defining</a> a variable.<br>int num = 5;
+Copy<br>In this example, num is a variable of <a data-tooltip-position="top" aria-label="Type" data-href="Type" href="Concepts/Type.html" class="internal-link" target="_self" rel="noopener nofollow">type</a> int, which means it can hold an integer value. <br>The value 5 is assigned to num using the assignment operator =.<br>Variables can be used in expressions, statements, and other parts of a C# program. They can be reassigned to different values, and their values can be used in calculations or other operations.]]></description><link>Concepts/Variable.html</link><guid isPermaLink="false">Concepts/Variable.md</guid><pubDate>Fri, 05 May 2023 11:29:58 GMT</pubDate></item><item><title><![CDATA[0.1]]></title><description><![CDATA[ 
+ <br>Create 2 <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">classes</a>:<br>
+<br>User 
+<br>Pet 
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name - string 
+<br>pet - Pet
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name  - string
+<br>// Code here
+Copy]]></description><link>Tasks/0.1.html</link><guid isPermaLink="false">Tasks/0.1.md</guid><pubDate>Fri, 05 May 2023 12:16:07 GMT</pubDate></item><item><title><![CDATA[0.2]]></title><description><![CDATA[ 
+ <br>Create 2 <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">classes</a>:<br>
+<br>User 
+<br>Pet 
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name - string
+<br>pet - Pet
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name  - string
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The human &lt;\name&gt; is going for a walk". The method returns nothing
+<br>// Code here
+Copy]]></description><link>Tasks/0.2.html</link><guid isPermaLink="false">Tasks/0.2.md</guid><pubDate>Fri, 05 May 2023 12:17:50 GMT</pubDate></item><item><title><![CDATA[0.3]]></title><description><![CDATA[ 
+ <br>Create 2 <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">classes</a>:<br>
+<br>User 
+<br>Pet 
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name - string
+<br>pet - Pet
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name  - string
+<br>stamina - int
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The human &lt;\name&gt; is going for a walk". The method returns nothing
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The pet &lt;\name&gt; is going for a walk". The method returns nothing. The walk consumes 5 stamina.
+<br>// Code here
+Copy]]></description><link>Tasks/0.3.html</link><guid isPermaLink="false">Tasks/0.3.md</guid><pubDate>Fri, 05 May 2023 12:18:54 GMT</pubDate></item><item><title><![CDATA[0.4]]></title><description><![CDATA[ 
+ <br>Create 2 <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">classes</a>:<br>
+<br>User 
+<br>Pet 
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name - string
+<br>pet - Pet
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name  - string
+<br>stamina - int
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The human &lt;\name&gt; is going for a walk". The method returns nothing
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The pet &lt;\name&gt; is going for a walk". The method returns nothing. The walk consumes 5 stamina. If stamina is less than 0 after subtracting 5 from it, the pet instead prints to the console  "The pet &lt;\name&gt; is too tired to go for a walk"
+<br>// Code here
+Copy]]></description><link>Tasks/0.4.html</link><guid isPermaLink="false">Tasks/0.4.md</guid><pubDate>Fri, 05 May 2023 12:20:12 GMT</pubDate></item><item><title><![CDATA[0.5]]></title><description><![CDATA[ 
+ <br>Create 2 <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">classes</a>:<br>
+<br>User 
+<br>Pet 
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name - string
+<br>pet - Pet
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name  - string
+<br>stamina - int
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The human &lt;\name&gt; is going for a walk". The method returns nothing
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The pet &lt;\name&gt; is going for a walk". The method returns nothing. The walk consumes 5 stamina. If stamina is less than 0 after subtracting 5 from it, the pet instead prints to the console  "The pet &lt;\name&gt; is too tired to go for a walk"
+<br>Rest - the pet increments its stamina by 20
+<br>// Code here
+Copy]]></description><link>Tasks/0.5.html</link><guid isPermaLink="false">Tasks/0.5.md</guid><pubDate>Fri, 05 May 2023 12:20:52 GMT</pubDate></item><item><title><![CDATA[0.6]]></title><description><![CDATA[ 
+ <br>Create 2 <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">classes</a>:<br>
+<br>User 
+<br>Pet 
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name - string
+<br>pet - Pet
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name  - string
+<br>stamina - int
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The human &lt;\name&gt; is going for a walk". The method returns nothing. The method takes a parameter of type bool and the name of "takePet". If the paramter is true, the Walk method on the pet is called
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The pet &lt;\name&gt; is going for a walk". The method returns nothing. The walk consumes 5 stamina. If stamina is less than 0 after subtracting 5 from it, the pet instead prints to the console  "The pet &lt;\name&gt; is too tired to go for a walk"
+<br>Rest - the pet increments its stamina by 20
+<br>// Code here
+Copy]]></description><link>Tasks/0.6.html</link><guid isPermaLink="false">Tasks/0.6.md</guid><pubDate>Fri, 05 May 2023 12:22:19 GMT</pubDate></item><item><title><![CDATA[0.7]]></title><description><![CDATA[ 
+ <br>Create 2 <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">classes</a>:<br>
+<br>User 
+<br>Pet 
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name - string
+<br>stamina - int
+<br>pet - Pet
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name  - string
+<br>stamina - int
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The human &lt;\name&gt; is going for a walk". The method returns nothing. The method takes a parameter of type bool and the name of "takePet". If the paramter is true, the Walk method on the pet is called.<br>
+The Walk method consumes 5 stamina. If stamina is less than 0 after subtracting 5 from it, the user instead prints to the console  "The human &lt;\name&gt; is too tired to go for a walk"
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The pet &lt;\name&gt; is going for a walk". The method returns nothing. The walk consumes 5 stamina. If stamina is less than 0 after subtracting 5 from it, the pet instead prints to the console  "The pet &lt;\name&gt; is too tired to go for a walk"
+<br>Rest - the pet increments its stamina by 20
+<br>// Code here
+Copy]]></description><link>Tasks/0.7.html</link><guid isPermaLink="false">Tasks/0.7.md</guid><pubDate>Fri, 05 May 2023 12:23:22 GMT</pubDate></item><item><title><![CDATA[0.8]]></title><description><![CDATA[ 
+ <br>Create 2 <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">classes</a>:<br>
+<br>User 
+<br>Pet 
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name - string
+<br>stamina - int
+<br>pet - Pet
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name  - string
+<br>stamina - int
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The human &lt;\name&gt; is going for a walk". The method returns nothing. The method takes a parameter of type bool and the name of "takePet". If the paramter is true, the Walk method on the pet is called.<br>
+The Walk method consumes 5 stamina. If stamina is less than 0 after subtracting 5 from it, the user instead prints to the console  "The human &lt;\name&gt; is too tired to go for a walk"
+
+<br>Rest - the user increments its stamina by 30
+
+
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The pet &lt;\name&gt; is going for a walk". The method returns nothing. The walk consumes 5 stamina. If stamina is less than 0 after subtracting 5 from it, the pet instead prints to the console  "The pet &lt;\name&gt; is too tired to go for a walk"
+<br>Rest - the pet increments its stamina by 20
+<br>// Code here
+Copy]]></description><link>Tasks/0.8.html</link><guid isPermaLink="false">Tasks/0.8.md</guid><pubDate>Fri, 05 May 2023 12:23:47 GMT</pubDate></item><item><title><![CDATA[0.9]]></title><description><![CDATA[ 
+ <br>Create 2 <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">classes</a>:<br>
+<br>User 
+<br>Pet 
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name - string
+<br>stamina - int
+<br>pets - Pet[]
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name  - string
+<br>stamina - int
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The human &lt;\name&gt; is going for a walk". The method returns nothing. The method takes a parameter of type bool and the name of "takePet". If the paramter is true, the Walk method on the pet is called.<br>
+The Walk method consumes 5 stamina. If stamina is less than 0 after subtracting 5 from it, the user instead prints to the console  "The human &lt;\name&gt; is too tired to go for a walk"
+<br>Rest - the user increments its stamina by 30<br>
+
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - prints to the console the following format: "The pet &lt;\name&gt; is going for a walk". The method returns nothing. The walk consumes 5 stamina. If stamina is less than 0 after subtracting 5 from it, the pet instead prints to the console  "The pet &lt;\name&gt; is too tired to go for a walk"
+<br>Rest - the pet increments its stamina by 20
+<br>CanWalk - returns a boolean that indicates if the pet has more than 0 stamina after subtracting 5 from it. 
+<br>// Code here
+Copy]]></description><link>Tasks/0.9.html</link><guid isPermaLink="false">Tasks/0.9.md</guid><pubDate>Fri, 05 May 2023 12:25:35 GMT</pubDate></item><item><title><![CDATA[1.0]]></title><description><![CDATA[ 
+ <br>Create 2 <a data-tooltip-position="top" aria-label="Class" data-href="Class" href="Classes/Class.html" class="internal-link" target="_self" rel="noopener nofollow">classes</a>:<br>
+<br>User 
+<br>Pet 
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name - string
+<br>stamina - int
+<br>pets - Pet[]
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Properties" data-href="Properties" href="Classes/Properties.html" class="internal-link" target="_self" rel="noopener nofollow">properties</a>:<br>
+<br>name  - string
+<br>stamina - int
+<br>The User class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - Method returns nothing.<br>
+The method takes a parameter of type bool and the name of "takePet".<br>
+Checks to see if subtracting 10 from stamina leave more than 0 left.<br>
+If it's less than 0, print to the console<br>
+"The human &lt;\name&gt; is too tired to go for a walk"<br>
+If it's more than 0, print to the console:<br>
+"The human &lt;\name&gt; is going for a walk"<br>
+But if takePet is true, it  instead prints<br>
+"The human &lt;\name&gt; is going for a walk with his pets"<br>
+Call the Walk method on all of the pets that have returned true from their CanWalk method.<br>
+subtract 20 from stamina.<br>
+
+<br>Rest - the user increments its stamina by 30<br>
+
+<br>The Pet class has the following <a data-tooltip-position="top" aria-label="Methods" data-href="Methods" href="Classes/Methods.html" class="internal-link" target="_self" rel="noopener nofollow">methods</a>:<br>
+<br>Walk - Method returns nothing.<br>
+Checks to see if subtracting 5 from the stamina leaves more than 0 left.<br>
+If it's less than 0, print to the console the following format:<br>
+"The pet &lt;\name&gt; is too tired for a walk".<br>
+Method exits/returns.<br>
+If it's more than 0, print to the console "The pet &lt;\name&gt; is going for a walk with its owner &lt;\owner_name&gt;"<br>
+The walk consumes 5 stamina. 
+<br>Rest - The pet increments its stamina by 20.<br>
+Method returns the state of the new stamina.<br>
+
+<br>CanWalk - Method returns a boolean that indicates if the pet has more than 0 stamina<br>
+after subtracting 5 from it. 
+<br>After all tasks are completed, print the <a data-tooltip-position="top" aria-label="State" data-href="State" href="Concepts/State.html" class="internal-link" target="_self" rel="noopener nofollow">state</a> of all created <a data-tooltip-position="top" aria-label="Object" data-href="Object" href="Classes/Object.html" class="internal-link" target="_self" rel="noopener nofollow">objects</a>.<br>// Code here
+Copy]]></description><link>Tasks/1.0.html</link><guid isPermaLink="false">Tasks/1.0.md</guid><pubDate>Fri, 05 May 2023 12:50:39 GMT</pubDate></item><item><title><![CDATA[Instructions]]></title><description><![CDATA[ 
+ <br>After carefully reading and implementing the tasks defined in this folder, copy paste the code into each of the files right after the task's instructions between a code block like so<br>DO NOT ADD ANY ADDITIONAL FUNCTIONALITY OUTSIDE OF THE REQUIRED TASK.<br>
+ANY ADDITIONAL FUNCTIONALITY IS CONSIDERED A MISTAKE<br>/// Instructions<br>// Your code here
+Copy]]></description><link>Tasks/Instructions.html</link><guid isPermaLink="false">Tasks/Instructions.md</guid><pubDate>Fri, 05 May 2023 11:40:59 GMT</pubDate></item><item><title><![CDATA[.NET is an open source developer platform, created by Microsoft, for building many different types of applications.]]></title><description><![CDATA[ 
+ <br><br><br>.NET is a free, cross-platform, open source developer platform for building many different types of applications.<br>With .NET, you can use multiple languages, editors, and libraries to build for web, mobile, desktop, games, IoT, and more.<br><br>Whether you're working in C#, F#, or Visual Basic, your code will run natively on any compatible operating system. You can build many types of apps with .NET. Some are cross-platform, and some target a specific set of operating systems and devices.]]></description><link>1.0 .NET.html</link><guid isPermaLink="false">1.0 .NET.md</guid><pubDate>Fri, 05 May 2023 06:24:39 GMT</pubDate></item><item><title><![CDATA[Entry point]]></title><description><![CDATA[ 
+ <br><br>In C#, the program begins executing at the Main method, which is the entry point of the program. The Main method is a static method that is defined in a class, and it must have the following signature:<br>static void Main(string[] args)
+{
+
+}
+Copy<br>The Main method takes an array of strings as its parameter, which contains any command-line arguments that were passed to the program. Within the Main method, you can write the code that you want to execute when the program starts.<br>When you run a C# program, the .NET runtime loads the program's assembly and then calls the Main method to begin execution. The Main method typically sets up any necessary data structures, creates objects, and calls other methods to perform the program's tasks. When the Main method returns, the program exits.]]></description><link>1.1 Entry Point.html</link><guid isPermaLink="false">1.1 Entry Point.md</guid><pubDate>Fri, 05 May 2023 06:27:00 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
+ ]]></description><link>index.html</link><guid isPermaLink="false">index.md</guid><pubDate>Mon, 04 Nov 2024 16:35:36 GMT</pubDate></item></channel></rss>
