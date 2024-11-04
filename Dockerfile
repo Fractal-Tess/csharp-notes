@@ -5,7 +5,7 @@ FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 
 # Copy static files to nginx directory
-COPY ./static .
+COPY . .
 
 # Copy custom nginx configuration if needed
 # COPY nginx.conf /etc/nginx/nginx.conf
